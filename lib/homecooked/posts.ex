@@ -1,9 +1,21 @@
 defmodule Homecooked.Posts do
   alias Homecooked.Repo
   alias Homecooked.Posts.Post
+  alias Homecooked.Posts.PostReaction
   alias Homecooked.Users.User
   import Ecto.Query, only: [from: 2]
   require Logger
+
+  @reaction_emojis [
+    "❤️",
+    "👍",
+    "😂",
+    "😮",
+    "🤮",
+    "😋"
+  ]
+
+  def reaction_emojis, do: @reaction_emojis
 
   def create_post(attrs, user) do
     share_token = Base.encode16(:rand.bytes(16), case: :lower)
@@ -76,7 +88,7 @@ defmodule Homecooked.Posts do
     query =
       from p in Post,
         where: p.user_id in ^all_user_ids,
-        preload: :user,
+        preload: [:user, [reactions: :user]],
         order_by: [desc: :inserted_at]
 
     page =
@@ -86,5 +98,15 @@ defmodule Homecooked.Posts do
       )
 
     {:ok, page}
+  end
+
+  def add_reaction(post_id, user, reaction_emoji) do
+    %PostReaction{}
+    |> PostReaction.changeset(%{
+      "user_id" => user.id,
+      "post_id" => post_id,
+      "reaction_emoji" => reaction_emoji
+    })
+    |> Repo.insert()
   end
 end

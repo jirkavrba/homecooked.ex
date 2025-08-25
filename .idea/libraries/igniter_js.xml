@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="igniter_js" type="mix">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/igniter_js/lib" />
+      <root url="file://$PROJECT_DIR$/deps/igniter_js/lib" />
+    </SOURCES>
+  </library>
+</component>

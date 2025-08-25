@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="rustler_precompiled" type="mix">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/rustler_precompiled/lib" />
+      <root url="file://$PROJECT_DIR$/deps/rustler_precompiled/lib" />
+    </SOURCES>
+  </library>
+</component>

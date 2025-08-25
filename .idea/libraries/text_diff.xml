@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="text_diff" type="mix">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/text_diff/lib" />
+      <root url="file://$PROJECT_DIR$/deps/text_diff/lib" />
+    </SOURCES>
+  </library>
+</component>

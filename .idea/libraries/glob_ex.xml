@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="glob_ex" type="mix">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/glob_ex/lib" />
+      <root url="file://$PROJECT_DIR$/deps/glob_ex/lib" />
+    </SOURCES>
+  </library>
+</component>

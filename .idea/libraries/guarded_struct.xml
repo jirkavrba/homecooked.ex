@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="guarded_struct" type="mix">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/guarded_struct/lib" />
+      <root url="file://$PROJECT_DIR$/deps/guarded_struct/lib" />
+    </SOURCES>
+  </library>
+</component>

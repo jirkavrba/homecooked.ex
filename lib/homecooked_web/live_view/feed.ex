@@ -1,4 +1,5 @@
 defmodule HomecookedWeb.LiveView.Feed do
+  alias Homecooked.Posts
   use HomecookedWeb, :live_view
 
   def mount(_params, session, socket) do
@@ -6,12 +7,14 @@ defmodule HomecookedWeb.LiveView.Feed do
          {:ok, feed_page} <- Homecooked.Posts.get_user_feed(user) do
       last_post = List.last(feed_page.entries)
       empty_feed = Enum.empty?(feed_page.entries)
+      reaction_emojis = Posts.reaction_emojis()
 
       socket =
         socket
         |> assign(:user, user)
         |> assign(:last_post, last_post)
         |> assign(:reached_end, empty_feed)
+        |> assign(:reaction_emojis, reaction_emojis)
         |> stream(:feed, feed_page.entries)
 
       {:ok, socket}
@@ -39,5 +42,29 @@ defmodule HomecookedWeb.LiveView.Feed do
       _ ->
         {:noreply, push_navigate(socket, to: ~p"/")}
     end
+  end
+
+  def handle_event(
+        "add_reaction",
+        %{
+          "post_id" => post_id,
+          "reaction_emoji" => reaction_emoji
+        },
+        socket
+      ) do
+    user = socket.assigns[:user]
+    updated_post = Posts.add_reaction(post_id, user, reaction_emoji)
+    updated_socket = stream_insert(socket, :feed, updated_post)
+
+    {:noreply, updated_socket}
+  end
+
+  def handle_event(
+        "remove_reaction",
+        %{"post_id" => post_id, "reaction_emoji" => reaction_emoji},
+        socket
+      ) do
+    user = socket.assigns[:user]
+    updated_post = Posts.add_reaction(post_id, user, reaction_emoji)
   end
 end

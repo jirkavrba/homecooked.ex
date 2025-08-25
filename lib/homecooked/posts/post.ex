@@ -1,6 +1,8 @@
 defmodule Homecooked.Posts.Post do
   use Ecto.Schema
   import Ecto.Changeset
+
+  alias Homecooked.Posts.PostReaction
   alias Homecooked.Users.User
 
   @primary_key {:id, :binary_id, autogenerate: true}
@@ -19,6 +21,7 @@ defmodule Homecooked.Posts.Post do
     field :share_token, :string
 
     belongs_to :user, User
+    has_many :reactions, PostReaction
 
     timestamps(type: :utc_datetime)
   end

@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="image" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/image/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/image/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/image/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/image/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/image/lib" />
+      <root url="file://$PROJECT_DIR$/deps/image/priv" />
+      <root url="file://$PROJECT_DIR$/deps/image/lib" />
+      <root url="file://$PROJECT_DIR$/deps/image/priv" />
+    </SOURCES>
+  </library>
+</component>

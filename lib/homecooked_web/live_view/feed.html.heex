@@ -93,6 +93,17 @@
         <div class="text-xs text-muted">
           {relative_time(post.inserted_at)}
         </div>
+
+        <div class="flex flex-row items-center justify-center gap-2">
+          <div
+            :for={emoji <- @reaction_emojis}
+            class="btn"
+            phx-click="add_reaction"
+            pxh-value-post-id={post.id}
+          >
+            {emoji}
+          </div>
+        </div>
       </div>
     </div>
   </div>

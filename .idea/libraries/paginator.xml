@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="paginator" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/paginator/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/paginator/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/paginator/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/paginator/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/paginator/lib" />
+      <root url="file://$PROJECT_DIR$/deps/paginator/lib" />
+    </SOURCES>
+  </library>
+</component>

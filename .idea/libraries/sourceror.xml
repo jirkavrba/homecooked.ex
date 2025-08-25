@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="sourceror" type="mix">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/sourceror/lib" />
+      <root url="file://$PROJECT_DIR$/deps/sourceror/lib" />
+    </SOURCES>
+  </library>
+</component>
