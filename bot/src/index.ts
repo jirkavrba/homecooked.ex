@@ -46,9 +46,17 @@ client.on(Events.InteractionCreate, async (event) => {
 
     const embed = new EmbedBuilder()
       .setTitle("Odkaz pro přihlášení")
-      .setDescription(
-        "Po kliknutí na tlačítko pod zprávou tě aplikace automaticky přihlásí.",
+      .setThumbnail(
+        `https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=20&data=${encodeURIComponent(link)}`,
       )
+      .setDescription(
+        "Po kliknutí na tlačítko pod zprávou nebo naskenování QR kódu tě aplikace automaticky přihlásí.",
+      )
+      .addFields({
+        name: "Odkaz pro přihlášení",
+        value: link,
+        inline: false,
+      })
       .setColor("#fcba03");
 
     console.log("Sending response with the magic link.");
